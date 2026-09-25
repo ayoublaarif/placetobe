@@ -85,7 +85,7 @@ defineProps<{
   --logo: calc(var(--size) * 0.9722);
   width: var(--logo);
   height: var(--logo);
-  animation: logo-breathe 3s ease-in-out infinite;
+  animation: logo-breathe 4s ease-in-out infinite;
 }
 
 @keyframes logo-breathe {
