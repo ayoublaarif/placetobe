@@ -3,18 +3,18 @@
     <section class="hero">
       <div class="hero-nav">
         <a class="nav-link place" href="#kontakt">
-          <img src="/images/dot.svg" width="16" height="16" alt="">
+          <img src="/images/mappin.png" width="32" height="32" alt="">
           Börnestraße 16
         </a>
         <div class="hero-core">
           <a class="nav-link" href="#schedule">
-            <img src="/images/dot.svg" width="16" height="16" alt="">
-            Schedule
+            <img src="/images/schedule.png" width="32" height="32" alt="">
+            Stundenplan
           </a>
           <LogoMark variant="hero" />
           <a class="nav-link" href="#angebote">
-            <img src="/images/dot.svg" width="16" height="16" alt="">
-            Preis
+            <img src="/images/price.png" width="32" height="32" alt="">
+            Preise
           </a>
         </div>
       </div>
@@ -30,44 +30,66 @@
       <OfferCard
         class="feature"
         size="lg"
-        title="Herbst Angebot - ein Monat Karte"
-        :lines="['30 Classes für ein Monat', 'Max. 1 participation / day']"
+        image="/images/doo1.png"
+        title="Herbst Angebot eine Monats Karte"
+        :lines="['30 Klassen für 1 Monat', '1. Teilnahme pro Tag']"
         price="99€"
+        href="https://www.eversports.de/org/product/04fdefcc-b5fc-43f5-a0f2-61f0477e3064?venueId=ceda3334-1691-4841-9369-794e50c4945e"
       />
       <div class="offer-row">
         <OfferCard
           size="sm"
-          title="8er + 2 Frei Karte"
-          :lines="['10 Classes für 3 Monat']"
+          image="/images/doo2.png"
+          title="8er + 2 frei Karten"
+          :lines="['10 Klassen für 3 Monate']"
           price="120€"
+          href="https://www.eversports.de/org/product/686dbaf2-dba1-4ea1-a780-1c899d76e97e?venueId=ceda3334-1691-4841-9369-794e50c4945e"
         />
-        <a class="book book-sm see-all" href="#angebote">See all offers</a>
+        <a class="book book-sm see-all" href="https://www.eversports.de/org/widget/ef5c9de3-75b4-40c1-9907-032896c0992e?venueId=ceda3334-1691-4841-9369-794e50c4945e">Alle Angebote hier</a>
         <OfferCard
           size="sm"
+          image="/images/doo3.png"
           title="3er Starter Angebot"
-          :lines="['3 Classes für ein Monat']"
+          :lines="['3 Klassen für 1 Monat']"
           price="44€"
+          href="https://www.eversports.de/org/product/41a9e72b-20d0-4515-b102-ae9a947b1536?venueId=ceda3334-1691-4841-9369-794e50c4945e"
         />
       </div>
+    </section>
+
+    <section id="schedule" class="schedule">
+      <h2>Stundenplan</h2>
+      <div
+        class="schedule-widget"
+        data-eversports-widget-id="64d2a8a6-517e-4e61-9de3-8e0f01ab99dd"
+      />
     </section>
 
     <footer id="kontakt" class="footer">
       <div class="footer-main">
         <div class="footer-block">
-          <p class="label">Adress</p>
+          <div class="footer-block-icon" gap="2px">
+            <img src="/images/mappin.png" width="48" height="48" alt="">
+            <p class="label">Adress</p>
+          </div>
+          
           <p class="detail addr-wide">
             Börnestraße 16, 13086 Berlin
           </p>
           <p class="detail addr-narrow">
-            Lychenerstraße 11<br>
-            10437 Berlin
+            Börnestraße 16<br>
+            13086 Berlin
           </p>
         </div>
         <LogoMark variant="footer" />
         <div class="footer-block">
-          <p class="label">Kontakt</p>
+          <div class="footer-block-icon" gap="2px">
+            <img src="/images/contact.png" width="48" height="48" alt="">
+            <p class="label">Kontakt</p>
+          </div>
+          
           <p class="detail">
-            <a href="mailto:contact@placetobe.studio">contact@placetobe.studio</a>
+            <a href="mailto:contact@placetobe.studio">lilly@placetobe.studio</a>
           </p>
           <p class="detail">
             <a href="tel:+491637431572">+49 163 7431572</a>
@@ -91,9 +113,21 @@
 </template>
 
 <script setup lang="ts">
+const eversportsSrc = 'https://widget-static.eversports.io/loader.js'
+
 useHead({
   title: 'place to be',
   htmlAttrs: { lang: 'de' },
+})
+
+onMounted(() => {
+  if (document.querySelector(`script[src="${eversportsSrc}"]`)) return
+
+  const script = document.createElement('script')
+  script.type = 'module'
+  script.src = eversportsSrc
+  script.async = true
+  document.body.appendChild(script)
 })
 </script>
 
@@ -141,10 +175,10 @@ useHead({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 2px;
   width: 160px;
   height: 48px;
-  color: #3d3022;
+  color: #52412D;
   font-family: "Alte Haas Grotesk", sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -153,8 +187,8 @@ useHead({
 }
 
 .nav-link img {
-  width: 16px;
-  height: 16px;
+  width: 48px;
+  height: 48px; 
 }
 
 .intro {
@@ -214,6 +248,22 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedule h2 {
+  position: static;
+  width: auto;
+  margin-bottom: 32px;
+}
+
+.schedule-widget {
+  width: 100%;
 }
 
 h2 {

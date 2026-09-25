@@ -1,9 +1,6 @@
 <template>
   <article class="card" :class="size">
-    <span class="pose" aria-hidden="true">
-      <img class="pose-photo" src="/images/icon-photo.png" alt="">
-      <span class="pose-fill" />
-    </span>
+    <img class="icon" :src="image" alt="">
     <div class="copy">
       <h3>{{ title }}</h3>
       <p v-for="line in lines" :key="line">
@@ -13,7 +10,7 @@
         {{ price }}
       </p>
     </div>
-    <a class="book" href="#buchen">Jetzt buchen</a>
+    <a class="book" :href="href">Jetzt buchen</a>
   </article>
 </template>
 
@@ -23,6 +20,8 @@ defineProps<{
   title: string
   lines: string[]
   price: string
+  image: string
+  href: string
 }>()
 </script>
 
@@ -53,29 +52,12 @@ defineProps<{
   padding: 48px 28px;
 }
 
-.pose {
-  position: relative;
+.icon {
   display: block;
   width: 48px;
   height: 48px;
   flex: none;
-  -webkit-mask: url("/images/icon-mask.png") center / 100% 100% no-repeat;
-  mask: url("/images/icon-mask.png") center / 100% 100% no-repeat;
-}
-
-.pose-photo {
-  position: absolute;
-  width: 589.07%;
-  height: 883.6%;
-  left: -246.8%;
-  top: -349.98%;
-  max-width: none;
-}
-
-.pose-fill {
-  position: absolute;
-  inset: 0;
-  background: #52412d;
+  object-fit: contain;
 }
 
 .copy {
