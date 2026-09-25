@@ -432,11 +432,12 @@ h2 {
   }
 
   .feature {
-    margin-bottom: 0;
+    margin-bottom: -24px;
   }
 
   .offer-row {
     grid-template-columns: minmax(0, 400px);
+    justify-items: center;
     gap: 0;
   }
 

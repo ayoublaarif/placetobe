@@ -51,9 +51,8 @@ defineProps<{
 }
 
 .kind-hero .stage {
-  width: 288px;
-  height: 288px;
-  transform: scale(calc(var(--size) / 288px));
+  width: 100%;
+  height: 100%;
 }
 
 .kind-footer .stage {
@@ -69,9 +68,15 @@ defineProps<{
   pointer-events: none;
 }
 
+.kind-hero .ring:nth-child(1) { width: 150.6%; height: 150.6%; }
+.kind-hero .ring:nth-child(2) { width: 225.9%; height: 225.9%; }
+.kind-hero .ring:nth-child(3) { width: 322.7%; height: 322.7%; }
+.kind-hero .ring:nth-child(4) { width: 419.5%; height: 419.5%; }
+.kind-hero .ring:nth-child(5) { width: 548.6%; height: 548.6%; }
+
 .logo {
-  width: 280px;
-  height: 280px;
+  width: 97.22%;
+  height: 97.22%;
   border-radius: 50%;
   object-fit: cover;
 }
