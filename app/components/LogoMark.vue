@@ -85,21 +85,17 @@ defineProps<{
   --logo: calc(var(--size) * 0.9722);
   width: var(--logo);
   height: var(--logo);
-  animation: logo-breathe 4s ease-in-out infinite;
+  animation: logo-breathe 3s ease-in-out infinite;
 }
 
 @keyframes logo-breathe {
   0%,
   100% {
-    scale: 1;
+    scale: calc((var(--logo) + 8px) / var(--logo));
   }
 
-  25% {
-    scale: calc((var(--logo) - 24px) / var(--logo));
-  }
-
-  75% {
-    scale: calc((var(--logo) + 24px) / var(--logo));
+  33.333% {
+    scale: calc((var(--logo) - 8px) / var(--logo));
   }
 }
 
