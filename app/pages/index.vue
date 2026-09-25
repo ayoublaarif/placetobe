@@ -20,7 +20,7 @@
       </div>
 
       <div class="intro">
-        <h1>Yoga, Kunst, und Zeit für Dich</h1>
+        <h1>Yoga, Kunst und Zeit für Dich</h1>
         <a class="book book-lg" href="https://www.eversports.de/org/widget/ef5c9de3-75b4-40c1-9907-032896c0992e?venueId=ceda3334-1691-4841-9369-794e50c4945e">Jetzt buchen</a>
       </div>
     </section>
@@ -31,8 +31,8 @@
         class="feature"
         size="lg"
         image="/images/doo1.png"
-        title="Herbst Angebot eine Monats Karte"
-        :lines="['30 Klassen für 1 Monat', '1. Teilnahme pro Tag']"
+        title="Herbstangebot : Karte für einen Monat"
+        :lines="['30 Klassen für 1 Monat', '1. Klasse pro Tag']"
         price="99€"
         href="https://www.eversports.de/org/product/04fdefcc-b5fc-43f5-a0f2-61f0477e3064?venueId=ceda3334-1691-4841-9369-794e50c4945e"
       />
@@ -40,7 +40,7 @@
         <OfferCard
           size="sm"
           image="/images/doo2.png"
-          title="8er + 2 frei Karten"
+          title="8er Karte +2 Freikarten"
           :lines="['10 Klassen für 3 Monate']"
           price="120€"
           href="https://www.eversports.de/org/product/686dbaf2-dba1-4ea1-a780-1c899d76e97e?venueId=ceda3334-1691-4841-9369-794e50c4945e"
@@ -49,7 +49,7 @@
         <OfferCard
           size="sm"
           image="/images/doo3.png"
-          title="3er Starter Angebot"
+          title="3er Starterangebot"
           :lines="['3 Klassen für 1 Monat']"
           price="44€"
           href="https://www.eversports.de/org/product/41a9e72b-20d0-4515-b102-ae9a947b1536?venueId=ceda3334-1691-4841-9369-794e50c4945e"
@@ -70,7 +70,7 @@
         <div class="footer-block">
           <div class="footer-block-icon" gap="2px">
             <img src="/images/mappin.png" width="48" height="48" alt="">
-            <p class="label">Adress</p>
+            <p class="label">Adresse</p>
           </div>
           
           <p class="detail addr-wide">
@@ -463,10 +463,30 @@ h2 {
 @media (max-width: 839px) {
   .page {
     gap: 104px;
+    padding-top: 0;
   }
 
   .hero {
-    gap: 80px;
+    box-sizing: border-box;
+    height: calc(100vh - 32px);
+    height: calc(100svh - 32px);
+    justify-content: flex-end;
+    gap: 16px;
+    padding-top: max(16px, env(safe-area-inset-top, 0px));
+  }
+
+  .hero-nav {
+    flex: 1 1 auto;
+    row-gap: 12px;
+    align-content: space-evenly;
+  }
+
+  .hero-core > .mark {
+    margin-top: 0;
+  }
+
+  .intro {
+    gap: 20px;
   }
 
   .intro {
