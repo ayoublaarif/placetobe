@@ -21,7 +21,7 @@
 
       <div class="intro">
         <h1>Yoga, Kunst, und Zeit für Dich</h1>
-        <a class="book book-lg" href="#buchen">Jetzt buchen</a>
+        <a class="book book-lg" href="https://www.eversports.de/org/widget/ef5c9de3-75b4-40c1-9907-032896c0992e?venueId=ceda3334-1691-4841-9369-794e50c4945e">Jetzt buchen</a>
       </div>
     </section>
 
