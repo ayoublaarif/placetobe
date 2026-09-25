@@ -2,7 +2,7 @@
   <main class="page">
     <section class="hero">
       <div class="hero-nav">
-        <a class="nav-link place" href="#kontakt">
+        <a class="nav-link place" href="https://maps.app.goo.gl/cdR8k1HVQb9f53nt9">
           <img src="/images/mappin.png" width="32" height="32" alt="">
           Börnestraße 16
         </a>
@@ -145,6 +145,12 @@ onMounted(() => {
 
 .page > * {
   width: min(1232px, 100%);
+}
+
+#angebote,
+#schedule,
+#kontakt {
+  scroll-margin-top: 48px;
 }
 
 .hero {
@@ -449,8 +455,8 @@ h2 {
   }
 
   .nav-link img {
-    width: 12.4px;
-    height: 12.4px;
+    width: 40px;
+    height: 40px;
   }
 }
 
