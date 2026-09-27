@@ -25,7 +25,7 @@
 
       <div class="copy">
         <p id="usc-popup-title" class="title">
-          Urban Sports, Wellhub & Wellpass
+          Check-in mit Urban Sports, Wellhub oder Wellpass?
         </p>
         <p class="body">
           Bis 15. Oktober wie gewohnt über YogaCircle buchen. Ab dem 16. Oktober erfolgt die Buchung exklusiv über das neue place to be Profil.
@@ -92,6 +92,7 @@ watch(open, async (isOpen) => {
   position: absolute;
   left: 56px;
   top: 24px;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,12 +120,15 @@ watch(open, async (isOpen) => {
   width: 48px;
   height: 48px;
   flex: none;
+  pointer-events: none;
 }
 
 .bubble {
+  position: relative;
   display: block;
   width: 48px;
   height: 48px;
+  overflow: hidden;
   -webkit-mask: url("/images/usc-mask.png") center / 100% 100% no-repeat;
   mask: url("/images/usc-mask.png") center / 100% 100% no-repeat;
 }
