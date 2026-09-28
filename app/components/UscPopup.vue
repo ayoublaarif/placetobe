@@ -28,7 +28,7 @@
           Check-in mit Urban Sports, Wellhub oder Wellpass?
         </p>
         <p class="body">
-          Bis 15. Oktober wie gewohnt über YogaCircle buchen. Ab dem 16. Oktober erfolgt die Buchung exklusiv über das neue place to be Profil.
+          Bis 15.Oktober wie gewohnt über <a href="https://www.urbansportsclub.com/en/venues/20660">YogaCircle Weißensee buchen</a>. Ab dem 16.Oktober erfolgt die Buchung exklusiv über das neue place to be Profil.
         </p>
       </div>
     </div>
@@ -205,6 +205,12 @@ watch(open, async (isOpen) => {
   font-family: "Alte Haas Grotesk", sans-serif;
   font-size: 16px;
   line-height: 24px;
+}
+
+.body a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 @media (max-width: 440px) {
