@@ -36,16 +36,28 @@
 </template>
 
 <script setup lang="ts">
+const SESSION_COOKIE = 'ptb-usc-popup'
+
 const open = ref(false)
 const closeButton = ref<HTMLButtonElement | null>(null)
 let timer: number | undefined
+
+function seenThisSession() {
+  return document.cookie.split('; ').includes(`${SESSION_COOKIE}=shown`)
+}
+
+function markSeen() {
+  document.cookie = `${SESSION_COOKIE}=shown; path=/; SameSite=Lax`
+}
 
 function close() {
   open.value = false
 }
 
 onMounted(() => {
+  if (seenThisSession()) return
   timer = window.setTimeout(() => {
+    markSeen()
     open.value = true
   }, 2400)
 })

@@ -3,5 +3,6 @@
     <NuxtRouteAnnouncer />
     <NuxtPage />
     <UscPopup />
+    <ConsentBanner />
   </div>
 </template>

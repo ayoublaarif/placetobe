@@ -10,14 +10,19 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-YWFE7H53SL',
-          async: true,
-        },
-        {
           innerHTML: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-YWFE7H53SL');`,
+window.gtag = gtag;
+try {
+  if (localStorage.getItem('ptb-analytics') === 'granted') {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-YWFE7H53SL';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-YWFE7H53SL');
+  }
+} catch (e) {}`,
         },
       ],
     },
