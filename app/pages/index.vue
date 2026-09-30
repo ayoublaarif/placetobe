@@ -12,7 +12,7 @@
             Stundenplan
           </a>
           <LogoMark variant="hero" />
-          <a class="nav-link" href="#angebote">
+          <a class="nav-link" href="https://www.eversports.de/org/widget/ef5c9de3-75b4-40c1-9907-032896c0992e?venueId=ceda3334-1691-4841-9369-794e50c4945e">
             <img src="/images/price.png" width="32" height="32" alt="">
             Preise
           </a>
