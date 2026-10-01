@@ -51,7 +51,7 @@
         size="lg"
         image="/images/doo1.png"
         title="Herbstangebot : Karte für einen Monat"
-        :lines="['30 Klassen für 1 Monat', '1. Klasse pro Tag']"
+        :lines="['30 Klassen für 1 Monat', 'Eine Klasse pro Tag']"
         price="99€"
         href="https://www.eversports.de/org/product/04fdefcc-b5fc-43f5-a0f2-61f0477e3064?venueId=ceda3334-1691-4841-9369-794e50c4945e"
       />
