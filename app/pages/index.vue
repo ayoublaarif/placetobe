@@ -186,6 +186,8 @@ onMounted(() => {
   justify-content: center;
   gap: 120px;
   min-height: 168px;
+  padding-inline: 24px;
+  margin: 24px;
 }
 
 .usc-title,
@@ -207,6 +209,7 @@ onMounted(() => {
 }
 
 .usc-banner h2 {
+  
   position: static;
   width: 100%;
   margin: 0;
@@ -596,7 +599,7 @@ h2 {
     flex-direction: column;
     gap: 24px;
     min-height: 0;
-    padding: 0 16px;
+    padding: 24px;
   }
 
   .usc-title {
@@ -615,6 +618,14 @@ h2 {
   .usc-copy p {
     text-align: center;
   }
+
+@media (max-width: 460px) {
+  .usc-heading {
+    flex-shrink: 0;
+    width: min(300px, 100vw);
+    max-width: none;
+  }
+}
 
   .intro {
     width: min(296px, 100%);
