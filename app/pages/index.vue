@@ -85,6 +85,7 @@
     </section>
 
     <footer id="kontakt" class="footer">
+      <div class="footer-card">
       <div class="footer-main">
         <div class="footer-block">
           <div class="footer-block-icon" gap="2px">
@@ -108,7 +109,7 @@
           </div>
           
           <p class="detail">
-            <a href="mailto:contact@placetobe.studio">lilly@placetobe.studio</a>
+            <a href="mailto:lilly@placetobe.studio">lilly@placetobe.studio</a>
           </p>
           <p class="detail">
             <a href="tel:+491637431572">+49 163 7431572</a>
@@ -119,7 +120,7 @@
         <a href="https://www.tiktok.com" aria-label="TikTok">
           <img src="/images/tiktok.svg" width="24" height="24" alt="">
         </a>
-        <a href="https://www.instagram.com" aria-label="Instagram">
+        <a href="https://www.instagram.com/placetobe.studio/" aria-label="Instagram">
           <img src="/images/instagram.svg" width="24" height="24" alt="">
         </a>
         <a class="facebook" href="https://www.facebook.com" aria-label="Facebook">
@@ -127,6 +128,11 @@
           <img class="fb-mark" src="/images/fb-g31.svg" width="9.118" height="16.298" alt="">
         </a>
       </div>
+      </div>
+      <nav class="footer-legal" aria-label="Rechtliches">
+        <NuxtLink to="/impressum">Impressum</NuxtLink>
+        <NuxtLink to="/datenschutz">Datenschutz</NuxtLink>
+      </nav>
     </footer>
   </main>
 </template>
@@ -411,8 +417,16 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 18px;
+}
+
+.footer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 40px;
+  width: 100%;
   min-height: 397px;
   padding: 48px 0;
   border-radius: 48px;
@@ -473,6 +487,21 @@ h2 {
 
 .socials img {
   display: block;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 0 24px 0;
+  color: #52412d;
+  font-family: "Alte Haas Grotesk", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer-legal a {
+  text-decoration: none;
 }
 
 .facebook {
@@ -666,6 +695,10 @@ h2 {
   }
 
   .footer {
+    gap: 18px;
+  }
+
+  .footer-card {
     gap: 32px;
     min-height: 640px;
     padding: 48px 16px;

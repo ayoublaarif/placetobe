@@ -1,0 +1,84 @@
+.legal {
+  width: min(720px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 88px 0 64px;
+  color: #3d3122;
+  font-family: "Alte Haas Grotesk", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.legal .back {
+  color: #52412d;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal h1,
+.legal h2 {
+  margin: 0;
+  color: #3d3122;
+  font-weight: 400;
+}
+
+.legal h1 {
+  margin-top: 40px;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.legal h2 {
+  margin-top: 40px;
+  font-family: Blur, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  color: #52412d;
+}
+
+.legal p,
+.legal address {
+  margin: 16px 0 0;
+  font-style: normal;
+}
+
+.legal a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.legal .revoke {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin-top: 16px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 80px;
+  background: #c5edf7;
+  color: #52412d;
+  font-family: Blur, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.legal .revoke:focus-visible,
+.legal a:focus-visible {
+  outline: 2px solid #52412d;
+  outline-offset: 3px;
+}
+
+.legal-nav {
+  display: flex;
+  gap: 24px;
+  margin-top: 56px;
+  color: #52412d;
+}
+
+.legal-nav a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
