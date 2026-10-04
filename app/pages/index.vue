@@ -50,7 +50,7 @@
         class="feature"
         size="lg"
         image="/images/doo1.png"
-        title="Herbstangebot : Karte für einen Monat"
+        title="Herbstangebot : 30er Karte für einen Monat"
         :lines="['30 Klassen für 1 Monat', 'Eine Klasse pro Tag']"
         price="99€"
         href="https://www.eversports.de/org/product/04fdefcc-b5fc-43f5-a0f2-61f0477e3064?venueId=ceda3334-1691-4841-9369-794e50c4945e"
@@ -59,8 +59,8 @@
         <OfferCard
           size="sm"
           image="/images/doo2.png"
-          title="8er Karte +2 Freikarten"
-          :lines="['10 Klassen für 3 Monate']"
+          title="8er Karte + 4 Freikarten"
+          :lines="['12 Klassen für 3 Monate']"
           price="120€"
           href="https://www.eversports.de/org/product/686dbaf2-dba1-4ea1-a780-1c899d76e97e?venueId=ceda3334-1691-4841-9369-794e50c4945e"
         />
@@ -68,8 +68,8 @@
         <OfferCard
           size="sm"
           image="/images/doo3.png"
-          title="3er Starterangebot"
-          :lines="['3 Klassen für 1 Monat']"
+          title="4er Starterangebot"
+          :lines="['4 Klassen für 1 Monat']"
           price="44€"
           href="https://www.eversports.de/org/product/41a9e72b-20d0-4515-b102-ae9a947b1536?venueId=ceda3334-1691-4841-9369-794e50c4945e"
         />
