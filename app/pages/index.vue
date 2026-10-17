@@ -33,14 +33,15 @@
               <img src="/images/usc-badge.png" alt="" width="56" height="56">
             </span>
           </span>
-          <h2 id="usc-banner-title">Check in mit Urban Sports, Wellhub oder Wellpass?</h2>
+          <h2 id="usc-banner-title">Neue Urban Sports Club Profil!</h2>
         </div>
       </div>
       <div class="usc-copy">
-        <p>
-          Bis 15. Oktober wie gewohnt über YogaCircle buchen. Ab dem 16. Oktober erfolgt die Buchung exklusiv über das neue place to be Profil.
-        </p>
-        <a class="book book-lg" href="https://www.urbansportsclub.com/en/venues/20660">Check in mit Urban Sports</a>
+        <div>
+          <p>Der Standort bleibt genau derselbe, aber wir haben jetzt unser eigenes USC-Profil! Die alte Buchungsseite (über YogaCircle) gibt es nicht mehr.</p>
+          <p>Finde uns auf der Karte in der App unter unserem neuen Namen: place to be yoga and art studio</p>
+        </div>
+        <a class="book book-lg" href="https://urbansportsclub.com/en/venues/place-to-be-yoga-and-art-studio">Check in mit Urban Sports</a>
       </div>
     </section>
 
@@ -188,10 +189,10 @@ onMounted(() => {
 .usc-banner {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 120px;
-  min-height: 168px;
+  min-height: 200px;
   padding-inline: 24px;
   margin: 24px;
 }
@@ -204,13 +205,14 @@ onMounted(() => {
 
 .usc-title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
+  padding-top: 24px;
 }
 
 .usc-heading {
   position: relative;
-  width: 400px;
+  width: 280px;
   max-width: 100%;
 }
 
@@ -229,8 +231,8 @@ onMounted(() => {
 
 .usc-badge {
   position: absolute;
-  left: 53px;
-  top: -109px;
+  left: -109px;
+  top: -125px;
   display: grid;
   width: 68.586px;
   height: 68.586px;
@@ -259,12 +261,15 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
+  gap: 32px;
+}
+
+.usc-copy > div {
+  width: min(375px, 100%);
 }
 
 .usc-copy p {
-  width: 320px;
-  max-width: 100%;
+  width: 100%;
   margin: 0;
   color: #3d3122;
   font-family: "Alte Haas Grotesk", sans-serif;
@@ -625,14 +630,21 @@ h2 {
   }
 
   .usc-banner {
+    align-items: center;
     flex-direction: column;
     gap: 24px;
     min-height: 0;
     padding: 24px;
   }
 
+  .usc-title,
+  .usc-copy {
+    width: 100%;
+  }
+
   .usc-title {
     justify-content: center;
+    padding-top: 0;
   }
 
   .usc-badge {
@@ -647,14 +659,6 @@ h2 {
   .usc-copy p {
     text-align: center;
   }
-
-@media (max-width: 460px) {
-  .usc-heading {
-    flex-shrink: 0;
-    width: min(300px, 100vw);
-    max-width: none;
-  }
-}
 
   .intro {
     width: min(296px, 100%);

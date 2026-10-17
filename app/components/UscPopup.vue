@@ -25,12 +25,13 @@
 
       <div class="copy">
         <p id="usc-popup-title" class="title">
-          Check-in mit Urban Sports, Wellhub oder Wellpass?
+          Neue Urban Sports Club Profil!
         </p>
         <p class="body">
-          Bis 15.Oktober wie gewohnt über <a href="https://www.urbansportsclub.com/en/venues/20660">YogaCircle Weißensee buchen</a>. Ab dem 16.Oktober erfolgt die Buchung exklusiv über das neue place to be Profil.
-        </p>
+          Der Standort bleibt genau derselbe, aber wir haben jetzt unser eigenes USC-Profil! Die alte Buchungsseite (über YogaCircle) gibt es nicht mehr.
+Finde uns auf der Karte in der App unter unserem neuen Namen: place to be yoga and art studio</p>
       </div>
+      <a class="book book-lg" href="https://urbansportsclub.com/en/venues/place-to-be-yoga-and-art-studio">Check in jetzt</a>
     </div>
   </div>
 </template>
@@ -93,10 +94,10 @@ watch(open, async (isOpen) => {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  width: min(416px, 100%);
-  height: 400px;
+  width: min(480px, 100%);
+  height: 480px;
   padding: 48px 56px;
-  border-radius: 200px;
+  border-radius: 800px;
   background: #c5edf7;
 }
 
@@ -115,6 +116,41 @@ watch(open, async (isOpen) => {
   border-radius: 50%;
   background: #75362d;
   cursor: pointer;
+}
+
+
+.book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  border-radius: 80px;
+  background: #E6F8FC;
+  color: #52412d;
+  font-family: Blur, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.book:hover {
+  filter: brightness(0.98);
+}
+
+.book:focus-visible,
+.nav-link:focus-visible,
+.socials a:focus-visible {
+  outline: 2px solid #52412d;
+  outline-offset: 3px;
+}
+
+.book-lg {
+  height: 48px;
+}
+
+.book-sm {
+  height: 40px;
 }
 
 .close img {
@@ -211,7 +247,7 @@ watch(open, async (isOpen) => {
 }
 
 .body {
-  width: 287px;
+  width: 320px;
   max-width: 100%;
   color: #3d3122;
   font-family: "Alte Haas Grotesk", sans-serif;
