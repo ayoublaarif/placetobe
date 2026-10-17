@@ -25,7 +25,7 @@
 
       <div class="copy">
         <p id="usc-popup-title" class="title">
-          Neue Urban Sports Club Profil!
+          Neues Urban Sports Club Profil!
         </p>
         <p class="body">
           Der Standort bleibt genau derselbe, aber wir haben jetzt unser eigenes USC-Profil! Die alte Buchungsseite (über YogaCircle) gibt es nicht mehr.

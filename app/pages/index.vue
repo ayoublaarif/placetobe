@@ -33,7 +33,7 @@
               <img src="/images/usc-badge.png" alt="" width="56" height="56">
             </span>
           </span>
-          <h2 id="usc-banner-title">Neue Urban Sports Club Profil!</h2>
+          <h2 id="usc-banner-title">Neues Urban Sports Club Profil!</h2>
         </div>
       </div>
       <div class="usc-copy">
