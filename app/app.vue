@@ -2,7 +2,7 @@
   <div>
     <NuxtRouteAnnouncer />
     <NuxtPage />
-    <UscPopup />
+    <!-- <UscPopup /> -->
     <ConsentBanner />
   </div>
 </template>
