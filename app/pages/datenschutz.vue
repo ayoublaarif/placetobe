@@ -35,6 +35,17 @@
       Hinweise von Google: <a href="https://policies.google.com/privacy" rel="noopener">Datenschutzerklärung von Google</a>.
     </p>
 
+    <h2>Meta-Pixel</h2>
+    <p>
+      Wenn Sie einwilligen, lädt diese Website den Meta-Pixel (Pixel-ID 2070522823583543). Damit kann Meta nachvollziehen, dass die Website aufgerufen wurde. Dabei können Cookies gesetzt und Nutzungsdaten an Meta übermittelt werden, auch in die USA. Der Pixel startet erst nach „Akzeptieren“ im Hinweis auf der Website, gemeinsam mit Google Analytics. Ohne Einwilligung wird das Meta-Skript nicht geladen.
+    </p>
+    <p>
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO. Der Widerruf über die Schaltfläche oben löscht die gespeicherte Entscheidung für beide Dienste.
+    </p>
+    <p>
+      Hinweise von Meta: <a href="https://www.facebook.com/privacy/policy/" rel="noopener">Datenschutzerklärung von Meta</a>.
+    </p>
+
     <h2>Stundenplan und Buchung</h2>
     <p>
       Der Stundenplan auf der Startseite wird von Eversports geladen. Dabei kann Eversports Ihre IP-Adresse und technische Nutzungsdaten verarbeiten. Buchungen über „Jetzt buchen“ und die Angebotslinks öffnen Seiten von Eversports. Dort gilt die Datenschutzerklärung von Eversports.

@@ -1,7 +1,7 @@
 <template>
   <div v-if="visible" class="consent" role="dialog" aria-labelledby="consent-title">
     <p id="consent-title">
-      Wir verwenden Google Analytics, um zu verstehen, wie die Website genutzt wird. Dabei werden Cookies gesetzt.
+      Wir verwenden Google Analytics und den Meta-Pixel, um zu verstehen, wie die Website genutzt wird. Dabei können Cookies gesetzt und Daten an Google und Meta übermittelt werden.
     </p>
     <div class="actions">
       <button type="button" class="choice decline" @click="decline">Ablehnen</button>
@@ -15,11 +15,14 @@ declare global {
   interface Window {
     dataLayer?: unknown[]
     gtag?: (...args: unknown[]) => void
+    fbq?: (...args: unknown[]) => void
+    _fbq?: (...args: unknown[]) => void
   }
 }
 
 const STORAGE_KEY = 'ptb-analytics'
 const GA_ID = 'G-YWFE7H53SL'
+const META_PIXEL_ID = '2070522823583543'
 
 const visible = ref(false)
 
@@ -49,6 +52,17 @@ function loadAnalytics() {
   }
   window.gtag('js', new Date())
   window.gtag('config', GA_ID)
+  loadMetaPixel()
+}
+
+function loadMetaPixel() {
+  if (document.querySelector('script[src*="connect.facebook.net/en_US/fbevents.js"]')) {
+    window.fbq?.('track', 'PageView')
+    return
+  }
+  const boot = document.createElement('script')
+  boot.text = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`
+  document.head.appendChild(boot)
 }
 
 onMounted(() => {
