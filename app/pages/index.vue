@@ -50,11 +50,11 @@
       <OfferCard
         class="feature"
         size="lg"
-        image="/images/doo1.png"
-        title="Herbstangebot : 30er Karte für einen Monat"
-        :lines="['30 Klassen für 1 Monat', 'Eine Klasse pro Tag']"
-        price="99€"
-        href="https://www.eversports.de/org/product/04fdefcc-b5fc-43f5-a0f2-61f0477e3064?venueId=ceda3334-1691-4841-9369-794e50c4945e"
+        image="/images/doo3.png"
+          title="4er Starterangebot"
+          :lines="['4 Klassen für 1 Monat']"
+          price="44€"
+          href="https://www.eversports.de/org/product/41a9e72b-20d0-4515-b102-ae9a947b1536?venueId=ceda3334-1691-4841-9369-794e50c4945e"
       />
       <div class="offer-row">
         <OfferCard
@@ -68,11 +68,11 @@
         <a class="book book-sm see-all" href="https://www.eversports.de/org/widget/ef5c9de3-75b4-40c1-9907-032896c0992e?venueId=ceda3334-1691-4841-9369-794e50c4945e">Alle Angebote hier</a>
         <OfferCard
           size="sm"
-          image="/images/doo3.png"
-          title="4er Starterangebot"
-          :lines="['4 Klassen für 1 Monat']"
-          price="44€"
-          href="https://www.eversports.de/org/product/41a9e72b-20d0-4515-b102-ae9a947b1536?venueId=ceda3334-1691-4841-9369-794e50c4945e"
+          image="/images/doo1.png"
+        title="Herbstangebot"
+        :lines="['30 Klassen für 1 Monat']"
+        price="99€"
+        href="https://www.eversports.de/org/product/04fdefcc-b5fc-43f5-a0f2-61f0477e3064?venueId=ceda3334-1691-4841-9369-794e50c4945e"
         />
       </div>
     </section>
