@@ -29,7 +29,12 @@
           </label>
         </div>
         <p v-if="errorMessage" class="notice" role="alert">{{ errorMessage }}</p>
-        <button type="submit" :disabled="status === 'submitting'">Redeem</button>
+        <button type="submit" :disabled="status === 'submitting'" :aria-busy="status === 'submitting'" aria-label="Redeem">
+          <span class="button-label" :class="{ 'is-hidden': status === 'submitting' }">Redeem</span>
+          <span v-if="status === 'submitting'" class="dots" aria-hidden="true">
+            <span /><span /><span /><span />
+          </span>
+        </button>
       </form>
       <div v-else class="card success" role="status">
         <div class="offer">
@@ -263,6 +268,7 @@ button:focus-visible,
 }
 
 button {
+  position: relative;
   height: 48px;
   padding: 0 24px;
   border: 0;
@@ -278,7 +284,57 @@ button {
 
 button:disabled {
   cursor: default;
-  opacity: 0.6;
+}
+
+.button-label.is-hidden {
+  visibility: hidden;
+}
+
+.dots {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: redeem-dot 1.05s ease-in-out infinite;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.dots span:nth-child(4) {
+  animation-delay: 0.42s;
+}
+
+@keyframes redeem-dot {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dots span {
+    animation: none;
+  }
 }
 
 .notice {
