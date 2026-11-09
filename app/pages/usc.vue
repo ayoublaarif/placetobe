@@ -10,25 +10,25 @@
         </span>
         <div class="card-head">
           <p class="offer">4 = 6</p>
-          <p class="subtitle">Check-in 4 times?<br class="mobile-break"> Get 2 for free</p>
+          <p class="subtitle">4 mal eingecheckt ?<br class="mobile-break"> 2 mal geschenkt!</p>
         </div>
         <div class="fields">
           <label>
-            Name
+            name
             <input v-model="name" type="text" name="name" autocomplete="name" placeholder="placetobe@mail.com" required>
           </label>
           <label>
-            Email
+            e-mail
             <input v-model="email" type="email" name="email" autocomplete="email" placeholder="placetobe@mail.com" required>
           </label>
           <label>
-            Whatsapp Number
+            whatsapp nummer
             <input v-model="phone" type="tel" name="phone" autocomplete="tel" placeholder="0 1777 042 321" required>
           </label>
         </div>
         <p v-if="errorMessage" class="notice" role="alert">{{ errorMessage }}</p>
         <button type="submit" :disabled="status === 'submitting'" :aria-busy="status === 'submitting'" aria-label="2 Gratis-Tickets sichern">
-          <span class="button-label" :class="{ 'is-hidden': status === 'submitting' }">2 Gratis-Tickets sichern</span>
+          <span class="button-label" :class="{ 'is-hidden': status === 'submitting' }">2 gratis-tickets sichern</span>
           <span v-if="status === 'submitting'" class="dots" aria-hidden="true">
             <span /><span /><span /><span />
           </span>
@@ -280,7 +280,7 @@ button:focus-visible,
 .socials a:focus-visible,
 .footer-legal a:focus-visible {
   outline: 2px solid #52412d;
-  outline-offset: 3px;
+  outline-offset: 0px;
 }
 
 button {

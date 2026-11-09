@@ -8,29 +8,29 @@
             <p>Einzelticket</p>
             <p class="price">18€</p>
           </div>
-          <h1>redeem<br>your gift card</h1>
+          <h1>Löse deinen Gutscheincode ein</h1>
         </div>
         <div class="fields">
           <label>
-            Voll Name
+            vor- und nachname
             <input v-model="name" type="text" name="name" autocomplete="name" placeholder="Paula Musterfrau" required>
           </label>
           <label>
-            Email
+            e-mail
             <input v-model="email" type="email" name="email" autocomplete="email" placeholder="placetobe@mail.com" required>
           </label>
           <label>
-            Whatsapp Number
+            whatsapp nummer
             <input v-model="phone" type="tel" name="phone" autocomplete="tel" placeholder="0 1777 042 321" required>
           </label>
           <label>
-            Enter voucher here
+            geschenkgutschein eingeben
             <input v-model="voucher" type="text" name="voucher" autocomplete="off" placeholder="####" required>
           </label>
         </div>
         <p v-if="errorMessage" class="notice" role="alert">{{ errorMessage }}</p>
         <button type="submit" :disabled="status === 'submitting'" :aria-busy="status === 'submitting'" aria-label="Redeem">
-          <span class="button-label" :class="{ 'is-hidden': status === 'submitting' }">Redeem</span>
+          <span class="button-label" :class="{ 'is-hidden': status === 'submitting' }">einlösen</span>
           <span v-if="status === 'submitting'" class="dots" aria-hidden="true">
             <span /><span /><span /><span />
           </span>
@@ -264,7 +264,7 @@ button:focus-visible,
 .socials a:focus-visible,
 .footer-legal a:focus-visible {
   outline: 2px solid #52412d;
-  outline-offset: 3px;
+  outline-offset: 0px;
 }
 
 button {
@@ -510,6 +510,10 @@ button:disabled {
 }
 
 @media (max-width: 839px) {
+  h1 {
+  font-size: 32px;
+  line-height: 44px;
+}
   .page {
     gap: 64px;
     padding-top: 32px;
