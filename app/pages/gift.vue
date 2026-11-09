@@ -43,8 +43,8 @@
         </div>
         <img class="check" src="/images/gift-redeemed.svg" alt="" width="99.5519" height="97.7475">
         <div class="success-copy">
-          <p class="success-title">your gift card is redeemed successfully</p>
-          <p class="success-body">We’ll contact you very soon through Whatsapp about how to use your singleticket, thank you!</p>
+          <p class="success-title">Du hast deinen Gutschein erfolgreich eingelöst!</p>
+          <p class="success-body">Wir werden dir auf WhatsApp alle Infos schicken wie du dein gratis Ticket nutzen kannst. Danke, wir sehen uns auf der Matte</p>
         </div>
       </div>
     </section>
