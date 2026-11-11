@@ -189,7 +189,7 @@ import {
   freeMonthLabel,
   freeWeeks,
   type FreeClass,
-} from '../../shared/free-schedule'
+} from '#shared/free-schedule'
 
 const code = 'IAMLOVED111'
 const step = ref<'entry' | 'book' | 'success'>('entry')

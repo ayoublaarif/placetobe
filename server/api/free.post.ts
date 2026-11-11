@@ -1,4 +1,4 @@
-import { classDayLabel, classStartsAt, findFreeClass } from '../../shared/free-schedule'
+import { classDayLabel, classStartsAt, findFreeClass } from '#shared/free-schedule'
 
 function digits(value: string) {
   return value.replace(/\D/g, '')
