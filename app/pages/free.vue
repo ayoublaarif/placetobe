@@ -191,7 +191,7 @@ import {
   type FreeClass,
 } from '../../shared/free-schedule'
 
-const code = 'thankyou111'
+const code = 'IAMLOVED111'
 const step = ref<'entry' | 'book' | 'success'>('entry')
 const name = ref('')
 const email = ref('')
