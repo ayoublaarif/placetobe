@@ -1,16 +1,16 @@
 <template>
-  <main class="page" :class="{ 'is-gate': step === 'entry', 'is-stage': step !== 'entry' }">
+  <main class="page" :class="{ 'is-gate': step === 'entry', 'is-stage': step !== 'entry', 'is-lifted': codeHeld }" :style="gateStyle">
     <section v-if="step === 'entry'" class="gate">
       <div class="gate-photo">
         <img src="/images/special-code-studio.jpg" alt="">
       </div>
       <LogoMark variant="hero" />
-      <form class="gate-card" @submit.prevent="openBooking">
+      <form class="gate-card" :class="{ 'has-error': errorMessage }" @submit.prevent="openBooking">
         <div class="gate-copy">
           <h1>book a free class</h1>
           <label>
             your special code
-            <input v-model="voucher" type="text" name="voucher" autocomplete="off" placeholder="####" required>
+            <input v-model="voucher" type="text" name="voucher" autocomplete="off" placeholder="####" required @focus="holdCode" @blur="releaseCode">
           </label>
           <p v-if="errorMessage" class="notice" role="alert">{{ errorMessage }}</p>
         </div>
@@ -33,7 +33,7 @@
         <div class="fields">
           <label>
             full name
-            <input v-model="name" type="text" name="name" autocomplete="name" placeholder="placetobe@mail.com" required>
+            <input v-model="name" type="text" name="name" autocomplete="name" placeholder="Katty Ciel" required>
           </label>
           <label>
             e-mail
@@ -193,6 +193,21 @@ import {
 
 const code = 'IAMLOVED111'
 const step = ref<'entry' | 'book' | 'success'>('entry')
+const gateLift = ref(0)
+const codeHeld = ref(false)
+const gateLock = ref('')
+const cardLock = ref('')
+let cardCenter = 0
+let codeFocused = false
+
+const gateStyle = computed(() => {
+  if (!codeHeld.value) return undefined
+  return {
+    '--gate-height': gateLock.value,
+    '--gate-size': cardLock.value,
+    '--gate-lift': `${gateLift.value}px`,
+  }
+})
 const name = ref('')
 const email = ref('')
 const phone = ref('')
@@ -249,7 +264,58 @@ function pickDay(date: string) {
   errorMessage.value = ''
 }
 
+function clearGate() {
+  gateLift.value = 0
+  codeHeld.value = false
+  codeFocused = false
+  gateLock.value = ''
+  cardLock.value = ''
+}
+
+function holdCode() {
+  if (window.innerWidth > 839 || codeHeld.value) {
+    codeFocused = window.innerWidth <= 839
+    return
+  }
+  const page = document.querySelector('.page.is-gate')
+  const card = document.querySelector('.gate-card')
+  if (!(page instanceof HTMLElement) || !(card instanceof HTMLElement)) return
+  const pageRect = page.getBoundingClientRect()
+  const cardRect = card.getBoundingClientRect()
+  gateLock.value = `${Math.round(pageRect.height)}px`
+  cardLock.value = `${Math.round(cardRect.width)}px`
+  cardCenter = cardRect.top + cardRect.height / 2 - pageRect.top
+  codeFocused = true
+  codeHeld.value = true
+  syncGateLift()
+}
+
+function releaseCode() {
+  codeFocused = false
+  syncGateLift()
+}
+
+function syncGateLift() {
+  const viewport = window.visualViewport
+  if (!viewport || window.innerWidth > 839 || step.value !== 'entry') {
+    clearGate()
+    return
+  }
+  if (!codeHeld.value) return
+  const layout = Number.parseFloat(gateLock.value) || window.innerHeight
+  const covered = layout - viewport.offsetTop - viewport.height
+  if (!codeFocused && covered < 80) {
+    clearGate()
+    return
+  }
+  const cardBottom = cardCenter + Number.parseFloat(cardLock.value) / 2
+  const visibleBottom = viewport.offsetTop + viewport.height
+  gateLift.value = Math.max(0, Math.round(cardBottom - visibleBottom) - 48)
+  if (window.scrollY) window.scrollTo(0, 0)
+}
+
 function openBooking() {
+  clearGate()
   errorMessage.value = ''
   if (voucher.value.trim() !== code) {
     errorMessage.value = 'This voucher was not recognized.'
@@ -308,6 +374,16 @@ async function book() {
 
 useHead({
   title: 'Book a free class | place to be',
+})
+
+onMounted(() => {
+  window.visualViewport?.addEventListener('resize', syncGateLift)
+  window.visualViewport?.addEventListener('scroll', syncGateLift)
+})
+
+onBeforeUnmount(() => {
+  window.visualViewport?.removeEventListener('resize', syncGateLift)
+  window.visualViewport?.removeEventListener('scroll', syncGateLift)
 })
 </script>
 
@@ -1099,6 +1175,24 @@ button:focus-visible,
     overflow: hidden;
   }
 
+  .page.is-gate.is-lifted {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--gate-height);
+  }
+
+  .page.is-gate.is-lifted .gate {
+    height: var(--gate-height);
+    transform: translateY(calc(var(--gate-lift, 0px) * -1));
+  }
+
+  .page.is-gate.is-lifted .gate-card {
+    width: var(--gate-size);
+    height: var(--gate-size);
+  }
+
   .gate {
     height: 100%;
     overflow: hidden;
@@ -1127,6 +1221,22 @@ button:focus-visible,
 
   .gate-copy {
     gap: 24px;
+  }
+
+  .gate-card.has-error {
+    justify-content: flex-start;
+    padding-top: 40px;
+  }
+
+  .gate-card.has-error .gate-copy {
+    gap: 16px;
+  }
+
+  .gate-card.has-error .start {
+    position: absolute;
+    bottom: 88px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .page.is-stage {
